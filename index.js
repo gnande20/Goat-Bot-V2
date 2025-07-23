@@ -1,4 +1,10 @@
-/**
+const gpt = require("../scripts/gpt");
+
+if (event.body?.startsWith("/gpt ")) {
+  const prompt = event.body.slice(5);
+  const reply = await gpt(prompt);
+  api.sendMessage(reply, event.threadID, event.messageID);
+}/**
  * @author NTKhang
  * ! The source code is written by NTKhang, please don't change the author's name everywhere. Thank you for using
  * ! Official source code: https://github.com/ntkhang03/Goat-Bot-V2
